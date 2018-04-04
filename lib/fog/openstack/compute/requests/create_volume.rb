@@ -1,4 +1,3 @@
-#
 module Fog
   module OpenStack
     class Compute
@@ -33,7 +32,6 @@ module Fog
         end
       end
 
-      #
       class Mock
         def create_volume(name, description, size, options = {})
           response = Excon::Response.new
