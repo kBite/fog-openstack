@@ -37,13 +37,13 @@ describe "Fog::OpenStack::Compute | image requests" do
     end
 
     it "#list_images" do
-      @compute.list_images.body.
-        must_match_schema('images' => [OpenStack::Compute::Formats::SUMMARY])
+      @compute.list_images.body
+              .must_match_schema('images' => [OpenStack::Compute::Formats::SUMMARY])
     end
 
     it "#list_images_detail" do
-      @compute.list_images_detail.body.
-        must_match_schema('images' => [@image_format])
+      @compute.list_images_detail.body
+              .must_match_schema('images' => [@image_format])
     end
 
     after do
