@@ -12,7 +12,7 @@ describe "OpenStack authentication" do
 
     @body = {
       "access" => {
-        "token"          => {
+        "token" => {
           "expires" => @expires.iso8601,
           "id"      => @token,
           "tenant"  => {
@@ -24,7 +24,7 @@ describe "OpenStack authentication" do
         },
         "serviceCatalog" => [
           {
-            "endpoints"       => [
+            "endpoints" => [
               {
                 "adminURL"    => "http://example:8774/v2/#{@tenant_token}",
                 "region"      => "RegionOne",
@@ -52,18 +52,18 @@ describe "OpenStack authentication" do
             "name"            => "glance"
           }
         ],
-        "user"           => {
+        "user" => {
           "username"    => "admin",
           "roles_links" => [],
           "id"          => Fog::Mock.random_numbers(8).to_s,
           "roles"       => [
-            {"name" => "admin"},
-            {"name" => "KeystoneAdmin"},
-            {"name" => "KeystoneServiceAdmin"}
+            { "name" => "admin" },
+            { "name" => "KeystoneAdmin" },
+            { "name" => "KeystoneServiceAdmin" }
           ],
-          "name"        => "admin"
+          "name" => "admin"
         },
-        "metadata"       => {
+        "metadata" => {
           "is_admin" => 0,
           "roles"    => [
             Fog::Mock.random_numbers(8).to_s,
@@ -77,8 +77,8 @@ describe "OpenStack authentication" do
 
   it "with v2" do
     Excon.stub(
-      {:method => 'POST', :path => "/v2.0/tokens"},
-      {:status => 200, :body => Fog::JSON.encode(@body)}
+      { :method => 'POST', :path => "/v2.0/tokens" },
+      { :status => 200, :body => Fog::JSON.encode(@body) }
     )
 
     expected = {
@@ -141,8 +141,8 @@ describe "OpenStack authentication" do
 
   it "v2 missing storage service" do
     Excon.stub(
-      {:method => 'POST', :path => "/v2.0/tokens"},
-      {:status => 200, :body => Fog::JSON.encode(@body)}
+      { :method => 'POST', :path => "/v2.0/tokens" },
+      { :status => 200, :body => Fog::JSON.encode(@body) }
     )
 
     service = Object.new
@@ -164,7 +164,7 @@ describe "OpenStack authentication" do
     body_clone = @body.clone
     body_clone["access"]["serviceCatalog"] <<
       {
-        "endpoints"       => [
+        "endpoints" => [
           {
             "adminURL"    => "http://example2:8774/v2/#{@tenant_token}",
             "region"      => "RegionOne",

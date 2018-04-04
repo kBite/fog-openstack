@@ -108,9 +108,9 @@ module Fog
       connection = Fog::Core::Connection.new(url, false, connection_options)
       response = connection.request(
         :expects => [200, 204, 300],
-        :headers => {'Content-Type' => 'application/json',
-                     'Accept'       => 'application/json',
-                     'X-Auth-Token' => auth_token},
+        :headers => { 'Content-Type' => 'application/json',
+                      'Accept'       => 'application/json',
+                      'X-Auth-Token' => auth_token },
         :method  => 'GET'
       )
 

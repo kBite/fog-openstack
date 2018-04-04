@@ -51,7 +51,7 @@ describe "Fog::OpenStack::Baremetal | Baremetal port requests" do
     it "#patch_port" do
       @baremetal.patch_port(
         @port['uuid'],
-        [{'op' => 'add', 'path' => '/extra/name', 'value' => 'eth1'}]
+        [{ 'op' => 'add', 'path' => '/extra/name', 'value' => 'eth1' }]
       ).body.must_match_schema(@detailed_port_format)
     end
 

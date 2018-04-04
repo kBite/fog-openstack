@@ -57,7 +57,7 @@ describe "Fog::OpenStack::Compute | address requests" do
     end
 
     def address_pools_format
-      {"name" => String}
+      { "name" => String }
     end
 
     it "#allocate_address" do

@@ -120,7 +120,7 @@ describe "Fog::OpenStack::Compute | server" do
 
         server = compute.servers.new(
           :name       => 'test server',
-          :metadata   => {"foo" => "bar"},
+          :metadata   => { "foo" => "bar" },
           :flavor_ref => flavor,
           :image_ref  => image
         )

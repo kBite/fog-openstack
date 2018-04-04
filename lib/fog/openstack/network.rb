@@ -269,7 +269,7 @@ module Fog
             tenant_id    = Fog::Mock.random_hex(8)
 
             hash[key] = {
-              :extensions             => {
+              :extensions => {
                 extension_id => {
                   'id'          => extension_id,
                   'alias'       => 'dvr',
@@ -278,7 +278,7 @@ module Fog
                   'name'        => 'Distributed Virtual Router'
                 }
               },
-              :networks               => {
+              :networks => {
                 network_id                => {
                   'id'                    => network_id,
                   'name'                  => 'Public',
@@ -348,7 +348,7 @@ module Fog
                 "network"    => 10,
                 "floatingip" => 50
               },
-              :quotas                 => [
+              :quotas => [
                 {
                   "subnet"     => 10,
                   "network"    => 10,

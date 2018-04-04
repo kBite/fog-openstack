@@ -30,7 +30,7 @@ module Fog
         end
 
         def update_network(network_id, options = {})
-          data = {'network' => self.class.update(options)}
+          data = { 'network' => self.class.update(options) }
           request(
             :body    => Fog::JSON.encode(data),
             :expects => 200,

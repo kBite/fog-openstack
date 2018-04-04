@@ -118,7 +118,7 @@ describe "Fog::OpenStack::Storage | large object requests" do
         describe "with large object" do
           before do
             unless Fog.mocking?
-              options = {'X-Object-Manifest' => "#{@directory.identity}/fog_large_object/"}
+              options = { 'X-Object-Manifest' => "#{@directory.identity}/fog_large_object/" }
               @storage.put_dynamic_obj_manifest(@directory.identity, 'fog_large_object', options)
             end
           end
@@ -145,7 +145,7 @@ describe "Fog::OpenStack::Storage | large object requests" do
       describe "storing manifest in a different container than the segments" do
         before do
           unless Fog.mocking?
-            options = {'X-Object-Manifest' => "#{@directory.identity}/fog_large_object/"}
+            options = { 'X-Object-Manifest' => "#{@directory.identity}/fog_large_object/" }
             @storage.put_dynamic_obj_manifest(@directory2.identity, 'fog_large_object', options)
           end
         end

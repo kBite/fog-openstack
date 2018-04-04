@@ -26,7 +26,7 @@ namespace :tests do
   desc 'Run fog-openstack tests with RSpec and VCR'
   Rake::TestTask.new do |t|
     t.name = 'spec'
-    t.libs.push [ "lib", "spec" ]
+    t.libs.push ["lib", "spec"]
     t.pattern = 'spec/**/*_spec.rb'
     t.verbose = true
   end
