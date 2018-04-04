@@ -2,7 +2,7 @@ module Fog
   module OpenStack
     class  ContainerInfra
       class Real
-        def get_certificate(bay_uuid)
+        def get_certificate(_bay_uuid)
           request(
             :expects => [200],
             :method  => 'GET',
