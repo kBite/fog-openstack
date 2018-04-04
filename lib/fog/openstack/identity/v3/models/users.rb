@@ -22,7 +22,7 @@ module Fog
           end
 
           def find_by_name(name, options = {})
-            load(service.list_users(options.merge(:name => name)).body["users"])
+            load(service.list_users(options.merge(name: name)).body["users"])
           end
 
           def destroy(id)

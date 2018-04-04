@@ -72,7 +72,7 @@ class OpenStackVCR
         config.default_cassette_options.merge! :match_requests_on => %i[method uri body]
       else
         config.cassette_library_dir = "spec/debug"
-        config.default_cassette_options = { :record => :all }
+        config.default_cassette_options = { record: :all }
       end
 
       config.before_playback do |interaction|

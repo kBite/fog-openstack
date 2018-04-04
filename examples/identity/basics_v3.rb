@@ -58,17 +58,17 @@ end
 #
 # Create a new tenant
 #
-project = keystone.projects.create :name        => 'rubiojr@example.net',
-                                   :description => 'My foo tenant'
+project = keystone.projects.create name: 'rubiojr@example.net',
+                                   description: 'My foo tenant'
 
 #
 # Create a new user
 #
-user = keystone.users.create :name               => 'rubiojr@example.net',
-                             :default_project_id => project.id,
-                             :password           => 'rubiojr@example.net',
-                             :email              => 'rubiojr@example.net',
-                             :domain_id          => 'Default'
+user = keystone.users.create name: 'rubiojr@example.net',
+                             default_project_id: project.id,
+                             password: 'rubiojr@example.net',
+                             email: 'rubiojr@example.net',
+                             domain_id: 'Default'
 
 # Find the recently created tenant
 project = keystone.projects.find { |t| t.name == 'rubiojr@example.net' }

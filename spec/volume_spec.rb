@@ -13,8 +13,8 @@ require_relative './shared_context'
       vcr_directory = 'spec/fixtures/openstack/volume_v2' if service_class == Fog::OpenStack::Volume::V2
 
       openstack_vcr = OpenStackVCR.new(
-        :vcr_directory => vcr_directory,
-        :service_class => service_class
+        vcr_directory: vcr_directory,
+        service_class: service_class
       )
       @service           = openstack_vcr.service
       @os_auth_url       = openstack_vcr.os_auth_url
@@ -47,7 +47,7 @@ require_relative './shared_context'
         puts "Checking for leftovers..." if ENV['DEBUG_VERBOSE']
         transfer_name = options[:name]
         # if this fails, cleanup this object (it was left over from a failed test run)
-        @service.transfers.all(:name => transfer_name).length.must_equal 0
+        @service.transfers.all(name: transfer_name).length.must_equal 0
 
         puts "Creating transfer #{transfer_name}..." if ENV['DEBUG_VERBOSE']
         return @service.transfers.create(options)
@@ -247,9 +247,9 @@ require_relative './shared_context'
           volume.wait_for { ready? }
 
           # create transfer object
-          transfer = setup_test_object(:type      => :transfer,
-                                       :name      => transfer_name,
-                                       :volume_id => volume.id)
+          transfer = setup_test_object(type: :transfer,
+                                       name: transfer_name,
+                                       volume_id: volume.id)
           # we need to save the auth_key NOW, it's only present in the response
           # from the create_transfer request
           auth_key    = transfer.auth_key
@@ -268,7 +268,7 @@ require_relative './shared_context'
           # check retrieval of transfer by name
           puts 'Retrieving transfer by name...' if ENV['DEBUG_VERBOSE']
 
-          transfers = @service.transfers.all(:name => transfer_name)
+          transfers = @service.transfers.all(name: transfer_name)
           transfers.length.must_equal 1
           transfer = transfers[0]
           transfer.must_be_kind_of Fog::OpenStack::Volume::Transfer
@@ -350,9 +350,9 @@ require_relative './shared_context'
             volume.wait_for { ready? }
 
             # create transfer object
-            transfer = setup_test_object(:type      => :transfer,
-                                         :name      => 'fog-testtransfer-1',
-                                         :volume_id => volume.id)
+            transfer = setup_test_object(type: :transfer,
+                                         name: 'fog-testtransfer-1',
+                                         volume_id: volume.id)
             # we need to save the auth_key NOW, it's only present in the response
             # from the create_transfer request
             auth_key      = transfer.auth_key

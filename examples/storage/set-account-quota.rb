@@ -52,12 +52,12 @@ id.tenants.each do |t|
   # tenant account, limiting the account bytes to 1048576 (1MB)
   #
   # Uploading more than 1MB will return 413: Request Entity Too Large
-  st.request :method => 'POST',
-             :headers => { 'X-Account-Meta-Quota-Bytes' => '1048576' }
+  st.request method: 'POST',
+             headers: { 'X-Account-Meta-Quota-Bytes' => '1048576' }
 
   # We can list the account details to verify the new
   # header has been added
-  pp st.request :method => 'HEAD'
+  pp st.request method: 'HEAD'
 end
 
 # Restore the account we were using initially (admin@test.lan)

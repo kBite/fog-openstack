@@ -8,7 +8,7 @@ describe "Fog::OpenStack::Workflow | Workflow requests" do
     @execution_id = Fog::UUID.uuid
 
     @workflow_name = "tripleo.plan_management.v1.create_default_deployment_plan"
-    @input = { :container => 'default' }
+    @input = { container: 'default' }
 
     @get_execution_response = {
       "state" => "running",

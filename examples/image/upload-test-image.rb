@@ -31,7 +31,7 @@ puts "Downloading Cirros image..."
 streamer = lambda do |chunk, _remaining_bytes, _total_bytes|
   image_out.write chunk
 end
-Excon.get image_url, :response_block => streamer
+Excon.get image_url, response_block: streamer
 image_out.close
 puts "Image downloaded to #{image_out.path}"
 

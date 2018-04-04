@@ -9,14 +9,14 @@ describe "Fog::OpenStack::Network | security_group_rule model" do
 
   describe "success" do
     before do
-      @secgroup = network.security_groups.create(:name => "fogsecgroup")
+      @secgroup = network.security_groups.create(name: "fogsecgroup")
       attributes = {
-        :security_group_id => @secgroup.id,
-        :direction         => "ingress",
-        :protocol          => "tcp",
-        :port_range_min    => 22,
-        :port_range_max    => 22,
-        :remote_ip_prefix  => "0.0.0.0/0"
+        security_group_id: @secgroup.id,
+        direction: "ingress",
+        protocol: "tcp",
+        port_range_min: 22,
+        port_range_max: 22,
+        remote_ip_prefix: "0.0.0.0/0"
       }
       @secgrouprule = network.security_group_rules.create(attributes)
       @secgrouprule.wait_for { ready? } unless Fog.mocking?

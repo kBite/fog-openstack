@@ -82,7 +82,7 @@ module Fog
         def self.data
           @data ||= Hash.new do |hash, key|
             hash[key] = {
-              :stacks => {}
+              stacks: {}
             }
           end
         end

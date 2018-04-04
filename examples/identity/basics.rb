@@ -47,16 +47,16 @@ end
 #
 # Create a new tenant
 #
-tenant = keystone.tenants.create :name        => 'rubiojr@example.net',
-                                 :description => 'My foo tenant'
+tenant = keystone.tenants.create name: 'rubiojr@example.net',
+                                 description: 'My foo tenant'
 
 #
 # Create a new user
 #
-user = keystone.users.create :name      => 'rubiojr@example.net',
-                             :tenant_id => tenant.id,
-                             :password  => 'rubiojr@example.net',
-                             :email     => 'rubiojr@example.net'
+user = keystone.users.create name: 'rubiojr@example.net',
+                             tenant_id: tenant.id,
+                             password: 'rubiojr@example.net',
+                             email: 'rubiojr@example.net'
 
 # Find the recently created tenant
 tenant = keystone.tenants.find { |t| t.name == 'rubiojr@example.net' }

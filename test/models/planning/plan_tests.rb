@@ -31,7 +31,7 @@ describe "Fog::OpenStack::Planning | plan" do
     it "#patch" do
       parameter = @instance.parameters.first
       @instance.patch(
-        :parameters => [
+        parameters: [
           {
             "name"  => parameter['name'],
             "value" => 'new_value'

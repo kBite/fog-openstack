@@ -5,7 +5,7 @@ describe "Fog::OpenStack::Network | floating_ip" do
   describe "success" do
     let (:instance) do
       network.floating_ips.create(
-        :floating_network_id => 'f0000000-0000-0000-0000-000000000000'
+        floating_network_id: 'f0000000-0000-0000-0000-000000000000'
       )
     end
 
@@ -51,7 +51,7 @@ describe "Fog::OpenStack::Network | floating_ip" do
 
     it "#destroy" do
       instance = network.floating_ips.create(
-        :floating_network_id => 'f0000000-0000-0000-0000-000000000000'
+        floating_network_id: 'f0000000-0000-0000-0000-000000000000'
       )
       instance.destroy == true
     end

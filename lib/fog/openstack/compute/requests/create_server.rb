@@ -28,7 +28,7 @@ module Fog
                        else
                          sg
                        end
-                { :name => name }
+                { name: name }
               end
           end
 
@@ -80,10 +80,10 @@ module Fog
           path = options['block_device_mapping'] ? 'os-volumes_boot' : 'servers'
 
           request(
-            :body    => Fog::JSON.encode(data),
-            :expects => [200, 202],
-            :method  => 'POST',
-            :path    => path
+            body: Fog::JSON.encode(data),
+            expects: [200, 202],
+            method: 'POST',
+            path: path
           )
         end
       end

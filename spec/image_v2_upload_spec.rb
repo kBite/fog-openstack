@@ -30,9 +30,9 @@ describe Fog::OpenStack::Image do
         # "no-op" virtual machine image, 80kB .ova file containing 64Mb dynamic disk
         image_path = "#{spec_data_folder}/minimal.ova"
 
-        foobar_image = @service.images.create(:name             => 'foobar_up2',
-                                              :container_format => 'ovf',
-                                              :disk_format      => 'vmdk')
+        foobar_image = @service.images.create(name: 'foobar_up2',
+                                              container_format: 'ovf',
+                                              disk_format: 'vmdk')
         foobar_id = foobar_image.id
 
         data_file = File.new(image_path, 'r')
@@ -41,7 +41,7 @@ describe Fog::OpenStack::Image do
           # to_s will convert the nil received after everything is read to the final empty chunk
           data_file.read(Excon.defaults[:chunk_size]).to_s
         end
-        foobar_image.upload_data(:request_block => chunker)
+        foobar_image.upload_data(request_block: chunker)
 
         # Make sure the upload is finished
         while @service.images.find_by_id(foobar_id).status == 'saving'
@@ -53,13 +53,13 @@ describe Fog::OpenStack::Image do
         read_block = lambda do |chunk, _remaining, _total|
           size += chunk.size
         end
-        foobar_image.download_data(:response_block => read_block)
+        foobar_image.download_data(response_block: read_block)
         size.must_equal File.size(image_path)
       ensure
         # Delete the image
         foobar_image.destroy if foobar_image
 
-        @service.images.all(:name => 'foobar_up2').each(&:destroy)
+        @service.images.all(name: 'foobar_up2').each(&:destroy)
 
         # Check that the deletion worked
         if foobar_id

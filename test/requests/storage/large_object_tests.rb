@@ -5,36 +5,36 @@ describe "Fog::OpenStack::Storage | large object requests" do
     @storage = Fog::OpenStack::Storage.new
 
     unless Fog.mocking?
-      @directory  = @storage.directories.create(:key => 'foglargeobjecttests')
-      @directory2 = @storage.directories.create(:key => 'foglargeobjecttests2')
+      @directory  = @storage.directories.create(key: 'foglargeobjecttests')
+      @directory2 = @storage.directories.create(key: 'foglargeobjecttests2')
       @segments = {
-        :a => {
-          :container => @directory.identity,
-          :name      => 'fog_large_object/a',
-          :data      => 'a' * (1024**2 + 10),
-          :size      => 1024**2 + 10,
-          :etag      => 'c2e97007d59f0c19b850debdcb80cca5'
+        a: {
+          container: @directory.identity,
+          name: 'fog_large_object/a',
+          data: 'a' * (1024**2 + 10),
+          size: 1024**2 + 10,
+          etag: 'c2e97007d59f0c19b850debdcb80cca5'
         },
-        :b => {
-          :container => @directory.identity,
-          :name      => 'fog_large_object/b',
-          :data      => 'b' * (1024**2 + 20),
-          :size      => 1024**2 + 20,
-          :etag      => 'd35f50622a1259daad75ff7d5512c7ef'
+        b: {
+          container: @directory.identity,
+          name: 'fog_large_object/b',
+          data: 'b' * (1024**2 + 20),
+          size: 1024**2 + 20,
+          etag: 'd35f50622a1259daad75ff7d5512c7ef'
         },
-        :c => {
-          :container => @directory.identity,
-          :name      => 'fog_large_object2/a',
-          :data      => 'c' * (1024**2 + 30),
-          :size      => 1024**2 + 30,
-          :etag      => '901d3531a87d188041d4d5b43cb464c1'
+        c: {
+          container: @directory.identity,
+          name: 'fog_large_object2/a',
+          data: 'c' * (1024**2 + 30),
+          size: 1024**2 + 30,
+          etag: '901d3531a87d188041d4d5b43cb464c1'
         },
-        :d => {
-          :container => @directory2.identity,
-          :name      => 'fog_large_object2/b',
-          :data      => 'd' * (1024**2 + 40),
-          :size      => 1024**2 + 40,
-          :etag      => '350c0e00525198813920a157df185c8d'
+        d: {
+          container: @directory2.identity,
+          name: 'fog_large_object2/b',
+          data: 'd' * (1024**2 + 40),
+          size: 1024**2 + 40,
+          etag: '350c0e00525198813920a157df185c8d'
         }
       }
     end
@@ -164,14 +164,14 @@ describe "Fog::OpenStack::Storage | large object requests" do
           unless Fog.mocking?
             segments = [
               {
-                :path       => "#{@segments[:a][:container]}/#{@segments[:a][:name]}",
-                :etag       => @segments[:a][:etag],
-                :size_bytes => @segments[:a][:size]
+                path: "#{@segments[:a][:container]}/#{@segments[:a][:name]}",
+                etag: @segments[:a][:etag],
+                size_bytes: @segments[:a][:size]
               },
               {
-                :path       => "#{@segments[:c][:container]}/#{@segments[:c][:name]}",
-                :etag       => @segments[:c][:etag],
-                :size_bytes => @segments[:c][:size]
+                path: "#{@segments[:c][:container]}/#{@segments[:c][:name]}",
+                etag: @segments[:c][:etag],
+                size_bytes: @segments[:c][:size]
               }
             ]
             @storage.put_static_obj_manifest(@directory.identity, 'fog_large_object', segments)
@@ -221,14 +221,14 @@ describe "Fog::OpenStack::Storage | large object requests" do
           unless Fog.mocking?
             segments = [
               {
-                :path       => "#{@segments[:b][:container]}/#{@segments[:b][:name]}",
-                :etag       => @segments[:b][:etag],
-                :size_bytes => @segments[:b][:size]
+                path: "#{@segments[:b][:container]}/#{@segments[:b][:name]}",
+                etag: @segments[:b][:etag],
+                size_bytes: @segments[:b][:size]
               },
               {
-                :path       => "#{@segments[:d][:container]}/#{@segments[:d][:name]}",
-                :etag       => @segments[:d][:etag],
-                :size_bytes => @segments[:d][:size]
+                path: "#{@segments[:d][:container]}/#{@segments[:d][:name]}",
+                etag: @segments[:d][:etag],
+                size_bytes: @segments[:d][:size]
               }
             ]
             @storage.put_static_obj_manifest(@directory2.identity, 'fog_large_object', segments)
@@ -359,14 +359,14 @@ describe "Fog::OpenStack::Storage | large object requests" do
             unless Fog.mocking?
               segments = [
                 {
-                  :path       => "#{@segments[:a][:container]}/#{@segments[:a][:name]}",
-                  :etag       => @segments[:a][:etag],
-                  :size_bytes => @segments[:a][:size]
+                  path: "#{@segments[:a][:container]}/#{@segments[:a][:name]}",
+                  etag: @segments[:a][:etag],
+                  size_bytes: @segments[:a][:size]
                 },
                 {
-                  :path       => "#{@segments[:b][:container]}/#{@segments[:b][:name]}",
-                  :etag       => @segments[:b][:etag],
-                  :size_bytes => @segments[:b][:size]
+                  path: "#{@segments[:b][:container]}/#{@segments[:b][:name]}",
+                  etag: @segments[:b][:etag],
+                  size_bytes: @segments[:b][:size]
                 }
               ]
               @storage.put_static_obj_manifest(@directory.identity, 'fog_large_object', segments)

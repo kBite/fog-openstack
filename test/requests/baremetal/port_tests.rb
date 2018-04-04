@@ -34,8 +34,8 @@ describe "Fog::OpenStack::Baremetal | Baremetal port requests" do
       @instance = Fog::OpenStack::Baremetal.new.create_node(node_attributes).body
 
       port_attributes = {
-        :address   => '00:c2:08:85:de:ca',
-        :node_uuid => @instance['uuid']
+        address: '00:c2:08:85:de:ca',
+        node_uuid: @instance['uuid']
       }
       @port = Fog::OpenStack::Baremetal.new.create_port(port_attributes).body
     end

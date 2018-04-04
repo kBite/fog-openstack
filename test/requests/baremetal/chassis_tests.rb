@@ -21,7 +21,7 @@ describe "Fog::OpenStack::Baremetal | Baremetal chassis requests" do
         'links'       => Array
       }
 
-      chassis_attributes = { :description => 'description' }
+      chassis_attributes = { description: 'description' }
       @instance = @baremetal.create_chassis(chassis_attributes).body
     end
 

@@ -6,9 +6,9 @@ module Fog
           options = {}
           options[:user_id] = user_id unless user_id.nil?
           request(
-            :expects => [202, 204],
-            :method  => 'DELETE',
-            :path    => "os-keypairs/#{Fog::OpenStack.escape(key_name)}"
+            expects: [202, 204],
+            method: 'DELETE',
+            path: "os-keypairs/#{Fog::OpenStack.escape(key_name)}"
           )
         end
       end

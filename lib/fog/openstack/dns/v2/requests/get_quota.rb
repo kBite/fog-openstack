@@ -7,10 +7,10 @@ module Fog
             headers, _options = Fog::OpenStack::DNS::V2.setup_headers(:all_projects => !project_id.nil?)
 
             request(
-              :expects => 200,
-              :method  => 'GET',
-              :path    => "quotas/#{project_id}",
-              :headers => headers
+              expects: 200,
+              method: 'GET',
+              path: "quotas/#{project_id}",
+              headers: headers
             )
           end
         end

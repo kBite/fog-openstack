@@ -4,10 +4,10 @@ require "helpers/network_helper"
 describe "Fog::OpenStack::Network | lb_vips" do
   before do
     @lb_vip = network.lb_vips.create(
-      :subnet_id     => 'subnet_id',
-      :pool_id       => 'pool_id',
-      :protocol      => 'HTTP',
-      :protocol_port => 80
+      subnet_id: 'subnet_id',
+      pool_id: 'pool_id',
+      protocol: 'HTTP',
+      protocol_port: 80
     )
     @lb_vips = network.lb_vips
   end

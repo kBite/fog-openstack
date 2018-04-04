@@ -8,9 +8,9 @@ describe "Fog::OpenStack::Compute | server" do
       flavor = compute.flavors.first.id
       image  = compute.images.first.id
       server = compute.servers.new(
-        :name       => 'test server',
-        :flavor_ref => flavor,
-        :image_ref  => image
+        name: 'test server',
+        flavor_ref: flavor,
+        image_ref: image
       )
       server.save
 
@@ -27,8 +27,8 @@ describe "Fog::OpenStack::Compute | server" do
     describe "#security_groups" do
       let(:my_group) do
         compute.security_groups.create(
-          :name        => 'my_group',
-          :description => 'my group'
+          name: 'my_group',
+          description: 'my group'
         )
       end
 
@@ -37,9 +37,9 @@ describe "Fog::OpenStack::Compute | server" do
 
       let(:server) do
         server = compute.servers.new(
-          :name       => 'test server',
-          :flavor_ref => flavor,
-          :image_ref  => image
+          name: 'test server',
+          flavor_ref: flavor,
+          image_ref: image
         )
 
         server.security_groups = my_group
@@ -82,20 +82,20 @@ describe "Fog::OpenStack::Compute | server" do
 
       it "creates server" do
         server = compute.servers.new(
-          :name       => 'test server',
-          :flavor_ref => flavor,
-          :image_ref  => image,
-          :state      => 'success'
+          name: 'test server',
+          flavor_ref: flavor,
+          image_ref: image,
+          state: 'success'
         )
         server.failed?.must_equal false
       end
 
       it "fails server creation" do
         server = compute.servers.new(
-          :name       => 'test server',
-          :flavor_ref => flavor,
-          :image_ref  => image,
-          :state      => 'ERROR'
+          name: 'test server',
+          flavor_ref: flavor,
+          image_ref: image,
+          state: 'ERROR'
         )
         server.failed?.must_equal true
       end
@@ -119,10 +119,10 @@ describe "Fog::OpenStack::Compute | server" do
         image  = compute.images.first.id
 
         server = compute.servers.new(
-          :name       => 'test server',
-          :metadata   => { "foo" => "bar" },
-          :flavor_ref => flavor,
-          :image_ref  => image
+          name: 'test server',
+          metadata: { "foo" => "bar" },
+          flavor_ref: flavor,
+          image_ref: image
         )
 
         server.save
@@ -142,9 +142,9 @@ describe "Fog::OpenStack::Compute | server" do
       image  = compute.images.first.id
 
       server = compute.servers.new(
-        :name       => 'test server',
-        :flavor_ref => flavor,
-        :image_ref  => image
+        name: 'test server',
+        flavor_ref: flavor,
+        image_ref: image
       )
 
       server.save
@@ -172,9 +172,9 @@ describe "Fog::OpenStack::Compute | server" do
     describe "#volumes" do
       let(:volume) do
         volume = compute.volumes.new(
-          :name        => 'test volume',
-          :description => 'test volume',
-          :size        => 1
+          name: 'test volume',
+          description: 'test volume',
+          size: 1
         )
         volume.save
         volume.wait_for { volume.status == 'available' } unless Fog.mocking?
@@ -185,9 +185,9 @@ describe "Fog::OpenStack::Compute | server" do
         flavor = compute.flavors.first.id
         image  = compute.images.first.id
         server = compute.servers.new(
-          :name       => 'test server',
-          :flavor_ref => flavor,
-          :image_ref  => image
+          name: 'test server',
+          flavor_ref: flavor,
+          image_ref: image
         )
 
         server.save

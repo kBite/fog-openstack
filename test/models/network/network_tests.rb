@@ -5,10 +5,10 @@ describe "Fog::OpenStack::Network | network" do
   describe "success" do
     before do
       @instance = network.networks.create(
-        :name           => 'net_name',
-        :shared         => false,
-        :admin_state_up => true,
-        :tenant_id      => 'tenant_id'
+        name: 'net_name',
+        shared: false,
+        admin_state_up: true,
+        tenant_id: 'tenant_id'
       )
     end
 
@@ -18,16 +18,16 @@ describe "Fog::OpenStack::Network | network" do
 
     it "#create+extensions" do
       net = network.networks.create(
-        :name                     => 'net_name',
-        :shared                   => false,
-        :admin_state_up           => true,
-        :tenant_id                => 'tenant_id',
-        :router_external          => true,
+        name: 'net_name',
+        shared: false,
+        admin_state_up: true,
+        tenant_id: 'tenant_id',
+        router_external: true,
         # local, gre, vlan. Depends on the provider.
         # May rise an exception if the network_type isn't valid:
         # QuantumError: "Invalid input for operation: provider:physical_network"
-        :provider_network_type    => 'gre',
-        :provider_segmentation_id => 22
+        provider_network_type: 'gre',
+        provider_segmentation_id: 22
       )
 
       net.status.must_equal "ACTIVE"

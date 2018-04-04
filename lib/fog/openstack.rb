@@ -107,11 +107,11 @@ module Fog
       url = "#{uri.scheme}://#{uri.host}:#{uri.port}#{path}"
       connection = Fog::Core::Connection.new(url, false, connection_options)
       response = connection.request(
-        :expects => [200, 204, 300],
-        :headers => { 'Content-Type' => 'application/json',
-                      'Accept'       => 'application/json',
-                      'X-Auth-Token' => auth_token },
-        :method  => 'GET'
+        expects: [200, 204, 300],
+        headers: { 'Content-Type' => 'application/json',
+                   'Accept'       => 'application/json',
+                   'X-Auth-Token' => auth_token },
+        method: 'GET'
       )
 
       body = Fog::JSON.decode(response.body)

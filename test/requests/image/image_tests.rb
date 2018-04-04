@@ -5,16 +5,16 @@ describe "Fog::OpenStack::Image | image requests" do
     openstack = Fog::OpenStack::Identity.new(:openstack_identity_api_version => 'v2.0')
 
     @image_attributes = {
-      :name             => 'new image',
-      :owner            => openstack.current_tenant['id'],
-      :is_public        => true,
-      :copy_from        => 'http://website.com/image.iso',
-      :disk_format      => 'iso',
-      :properties       => {
-        :user_id  => openstack.current_user['id'],
-        :owner_id => openstack.current_tenant['id']
+      name: 'new image',
+      owner: openstack.current_tenant['id'],
+      is_public: true,
+      copy_from: 'http://website.com/image.iso',
+      disk_format: 'iso',
+      properties: {
+        user_id: openstack.current_user['id'],
+        owner_id: openstack.current_tenant['id']
       },
-      :container_format => 'bare'
+      container_format: 'bare'
     }
 
     @image_format = {

@@ -4,15 +4,15 @@ require "helpers/network_helper"
 describe "Fog::OpenStack::Network | ipsec_policies" do
   before do
     params = {
-      :name                 => 'test-ipsec-policy',
-      :description          => 'Test VPN ipsec Policy',
-      :tenant_id            => 'tenant_id',
-      :auth_algorithm       => 'sha1',
-      :encryption_algorithm => 'aes-128',
-      :pfs                  => 'group5',
-      :transform_protocol   => 'esp',
-      :lifetime             => { 'units' => 'seconds', 'value' => 3600 },
-      :encapsulation_mode   => 'tunnel'
+      name: 'test-ipsec-policy',
+      description: 'Test VPN ipsec Policy',
+      tenant_id: 'tenant_id',
+      auth_algorithm: 'sha1',
+      encryption_algorithm: 'aes-128',
+      pfs: 'group5',
+      transform_protocol: 'esp',
+      lifetime: { 'units' => 'seconds', 'value' => 3600 },
+      encapsulation_mode: 'tunnel'
     }
 
     @ipsec_policy = network.ipsec_policies.create(params)

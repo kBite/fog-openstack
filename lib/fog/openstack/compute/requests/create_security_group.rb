@@ -11,10 +11,10 @@ module Fog
           }
 
           request(
-            :body    => Fog::JSON.encode(data),
-            :expects => 200,
-            :method  => 'POST',
-            :path    => 'os-security-groups'
+            body: Fog::JSON.encode(data),
+            expects: 200,
+            method: 'POST',
+            path: 'os-security-groups'
           )
         end
       end

@@ -13,10 +13,10 @@ module Fog
           data['keypair']['user_id'] = user_id unless user_id.nil?
 
           request(
-            :body    => Fog::JSON.encode(data),
-            :expects => [200, 201],
-            :method  => 'POST',
-            :path    => 'os-keypairs'
+            body: Fog::JSON.encode(data),
+            expects: [200, 201],
+            method: 'POST',
+            path: 'os-keypairs'
           )
         end
       end

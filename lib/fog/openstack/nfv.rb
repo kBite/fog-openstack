@@ -46,7 +46,7 @@ module Fog
         def self.data
           @data ||= Hash.new do |hash, key|
             hash[key] = {
-              :vnfs => [
+              vnfs: [
                 {
                   "status"      => "ACTIVE",
                   "description" => "demo-example",
@@ -58,7 +58,7 @@ module Fog
                   "name"        => "LadasTest"
                 }
               ],
-              :vnfds => [
+              vnfds: [
                 {
                   "service_types" => [{ "service_type" => "vnfd", "id" => "f9211d81-b58a-4849-8d38-e25376c421bd" }],
                   "description"   => "demo-example",

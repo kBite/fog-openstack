@@ -5,10 +5,10 @@ module Fog
   module OpenStack
     class Storage
       class Directory < Fog::OpenStack::Model
-        identity  :key, :aliases => 'name'
+        identity  :key, aliases: 'name'
 
-        attribute :bytes, :aliases => 'X-Container-Bytes-Used'
-        attribute :count, :aliases => 'X-Container-Object-Count'
+        attribute :bytes, aliases: 'X-Container-Bytes-Used'
+        attribute :count, aliases: 'X-Container-Object-Count'
 
         attr_writer :public
 
@@ -41,7 +41,7 @@ module Fog
 
         def save
           requires :key
-          service.put_container(key, :public => @public)
+          service.put_container(key, public: @public)
           true
         end
       end
