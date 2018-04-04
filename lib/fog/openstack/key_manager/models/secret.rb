@@ -45,9 +45,7 @@ module Fog
           service.delete_secret(uuid)
           true
         end
-
       end
-
     end
   end
 end

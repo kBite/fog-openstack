@@ -36,9 +36,7 @@ module Fog
           service.delete_container(uuid)
           true
         end
-
       end
-
     end
   end
 end

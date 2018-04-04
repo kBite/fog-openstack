@@ -16,7 +16,6 @@ module Fog
         attribute :created
         attribute :creator_id
         attribute :updated
-
       end
     end
   end
