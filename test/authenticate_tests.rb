@@ -78,7 +78,7 @@ describe "OpenStack authentication" do
   it "with v2" do
     Excon.stub(
       { :method => 'POST', :path => "/v2.0/tokens" },
-      { :status => 200, :body => Fog::JSON.encode(@body) }
+      :status => 200, :body => Fog::JSON.encode(@body)
     )
 
     expected = {
@@ -142,7 +142,7 @@ describe "OpenStack authentication" do
   it "v2 missing storage service" do
     Excon.stub(
       { :method => 'POST', :path => "/v2.0/tokens" },
-      { :status => 200, :body => Fog::JSON.encode(@body) }
+      :status => 200, :body => Fog::JSON.encode(@body)
     )
 
     service = Object.new

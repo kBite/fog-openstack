@@ -70,7 +70,7 @@ describe "Fog::OpenStack::ContainerInfra | cluster requests" do
       ]
 
       container_infra.update_cluster(cluster_uuid, attributes).body
-                     .must_match_schema({ "uuid" => String })
+                     .must_match_schema("uuid" => String)
     end
 
     it "#delete_cluster" do
