@@ -3,7 +3,8 @@ module Fog
     class Image
       class V2
         class Real
-          def download_image(image_id, _content_range = nil, params) # TODO: implement content range handling
+          # TODO: implement content range handling
+          def download_image(image_id, _content_range = nil, params)
             request_hash = {
               :expects  => [200, 204],
               :method   => 'GET',
