@@ -5,7 +5,7 @@ describe "Fog::OpenStack::Compute | availability zone requests" do
     @flavor_format = {
       'zoneName'  => String,
       'hosts'     => Fog::Nullable::Hash,
-      'zoneState' => Hash,
+      'zoneState' => Hash
     }
   end
 

@@ -23,7 +23,7 @@ describe "Fog::OpenStack::Introspection | Introspection requests" do
         "model"                => Fog::Nullable::String,
         "wwn"                  => Fog::Nullable::String,
         "serial"               => Fog::Nullable::String,
-        "size"                 => Integer,
+        "size"                 => Integer
       },
       "extra"          => {
         "network"  => {
