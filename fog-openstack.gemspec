@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rake',    '>= 12.3.3'
   spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'shindo',  '~> 0.3'
+  spec.add_development_dependency 'shindo', '~> 0.3'
   spec.add_development_dependency 'vcr'
-  spec.add_development_dependency 'webmock',  '~> 1.24.6'
+  spec.add_development_dependency 'webmock', '~> 1.24.6'
 end
