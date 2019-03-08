@@ -320,7 +320,7 @@ describe "Fog::OpenStack::Storage | large object requests" do
         end
 
         it "#put_static_obj_manifest with invalid etag" do
-          unless Fog.mocking?
+          skip if Fog.mocking?
 
             segments = [{
               :path       => "#{@segments[:a][:container]}/#{@segments[:a][:name]}",
@@ -329,12 +329,11 @@ describe "Fog::OpenStack::Storage | large object requests" do
             }]
             expected = {'Errors' => [[segments[0][:path], 'Etag Mismatch']]}
 
-            err = proc do
-              @storage.put_static_obj_manifest(@directory.identity, 'fog_large_object', segments)
-            end.must_raise Excon::Errors::BadRequest
+          err = proc do
+            @storage.put_static_obj_manifest(@directory.identity, 'fog_large_object', segments)
+          end.must_raise Excon::Errors::BadRequest
 
-            Fog::JSON.decode(err.response.body).must_equal expected
-          end
+          Fog::JSON.decode(err.response.body).must_equal expected
         end
 
         it "#put_static_obj_manifest with invalid byte_size" do
@@ -350,8 +349,7 @@ describe "Fog::OpenStack::Storage | large object requests" do
               @storage.put_static_obj_manifest(@directory.identity, 'fog_large_object', segments)
             end.must_raise Excon::Errors::BadRequest
 
-            Fog::JSON.decode(err.response.body).must_equal expected
-          end
+          Fog::JSON.decode(err.response.body).must_equal expected
         end
 
         describe "#delete_static_large_object with missing segment" do
