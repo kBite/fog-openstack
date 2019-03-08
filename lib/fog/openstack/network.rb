@@ -264,6 +264,7 @@ module Fog
             network_id   = Fog::UUID.uuid
             extension_id = Fog::UUID.uuid
             subnet_id    = Fog::UUID.uuid
+            port_id      = Fog::UUID.uuid
             tenant_id    = Fog::Mock.random_hex(8)
 
             hash[key] = {
@@ -304,7 +305,30 @@ module Fog
                   'port_security_enabled' => true
                 }
               },
-              ports: {},
+              ports: {
+                port_id => {
+                  'id' => port_id,
+                  'name' => 'port_1',
+                  'network_id' => network_id,
+                  'fixed_ips' => [
+                    {
+                      'ip_address' => '10.2.2.2',
+                      'subnet_id' => subnet_id
+                    }
+                  ],
+                  'mac_address' => 'fa:16:3e:62:91:7f',
+                  'status' => 'ACTIVE',
+                  'admin_state_up' => true,
+                  'device_id' => 'dhcp724fc160-2b2e-597e-b9ed-7f65313cd73f-e624a36d-762b-481f-9b50-4154ceb78bbb',
+                  'device_owner' => 'network:dhcp',
+                  'tenant_id' => tenant_id,
+                  'security_groups' => [],
+                  'allowed_address_pairs' => [
+                    'ip_address' => '10.1.1.1',
+                    'mac_address' => 'fa:16:3e:3d:2a:cc'
+                  ]
+                }
+              },
               subnets: {
                 subnet_id => {
                   'id' => subnet_id,
