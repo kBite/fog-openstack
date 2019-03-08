@@ -1,6 +1,6 @@
 module Fog
   module OpenStack
-    class  ContainerInfra
+    class ContainerInfra
       class Real
         def update_cluster(uuid_or_name, params)
           request(

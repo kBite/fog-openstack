@@ -24,12 +24,12 @@ module Fog
           response = Excon::Response.new
           response.status = 201
           data = {
-            'id'            => Fog::Mock.random_numbers(6).to_s,
-            'object_type'   => options[:object_type],
-            'object_id'     => options[:object_id],
-            'tenant_id'     => options[:tenant_id],
+            'id' => Fog::Mock.random_numbers(6).to_s,
+            'object_type' => options[:object_type],
+            'object_id' => options[:object_id],
+            'tenant_id' => options[:tenant_id],
             'target_tenant' => options[:target_tenant],
-            'action'        => options[:action]
+            'action' => options[:action]
           }
 
           self.data[:rbac_policies][data['id']] = data

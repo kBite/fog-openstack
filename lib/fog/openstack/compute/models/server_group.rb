@@ -14,6 +14,7 @@ module Fog
         def self.validate_server_group_policy(policy)
           raise ArgumentError, "#{policy} is an invalid policy... must use one of #{VALID_SERVER_GROUP_POLICIES.join(', ')}" \
             unless VALID_SERVER_GROUP_POLICIES.include? policy
+
           true
         end
       end

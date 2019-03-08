@@ -18,7 +18,7 @@ module Fog
             response.status = 200
             response.body = {
               "floatingip" => {
-                "id"                  => "00000000-0000-0000-0000-000000000000",
+                "id" => "00000000-0000-0000-0000-000000000000",
                 # changed
                 # "floating_ip_id" => floating_ip_id,
                 "port_id"             => data["port_id"],

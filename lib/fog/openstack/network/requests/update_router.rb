@@ -57,7 +57,7 @@ module Fog
             elsif egi.is_a?(Hash)
               router[:external_gateway_info] = egi
             else
-              raise ArgumentError.new('Invalid external_gateway_info attribute')
+              raise ArgumentError, 'Invalid external_gateway_info attribute'
             end
           end
 

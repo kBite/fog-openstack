@@ -34,7 +34,7 @@ module Fog
             response = Excon::Response.new
             response.status = 204
             response
-          rescue
+          rescue StandardError
           end
         end
       end

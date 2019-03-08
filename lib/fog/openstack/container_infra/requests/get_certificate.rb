@@ -1,6 +1,6 @@
 module Fog
   module OpenStack
-    class  ContainerInfra
+    class ContainerInfra
       class Real
         def get_certificate(_bay_uuid)
           request(

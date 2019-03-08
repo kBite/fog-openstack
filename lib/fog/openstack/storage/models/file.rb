@@ -6,13 +6,13 @@ module Fog
       class File < Fog::OpenStack::Model
         identity  :key, aliases: 'name'
 
-        attribute :access_control_allow_origin, :aliases => ['Access-Control-Allow-Origin']
-        attribute :cache_control,   :aliases => ['Cache-Control']
-        attribute :content_length,  :aliases => ['bytes', 'Content-Length'], :type => :integer
-        attribute :content_type,    :aliases => ['content_type', 'Content-Type']
-        attribute :content_disposition, :aliases => ['content_disposition', 'Content-Disposition']
-        attribute :etag,            :aliases => ['hash', 'Etag']
-        attribute :last_modified,   :aliases => ['last_modified', 'Last-Modified'], :type => :time
+        attribute :access_control_allow_origin, aliases: ['Access-Control-Allow-Origin']
+        attribute :cache_control,   aliases: ['Cache-Control']
+        attribute :content_length,  aliases: ['bytes', 'Content-Length'], type: :integer
+        attribute :content_type,    aliases: ['content_type', 'Content-Type']
+        attribute :content_disposition, aliases: ['content_disposition', 'Content-Disposition']
+        attribute :etag,            aliases: ['hash', 'Etag']
+        attribute :last_modified,   aliases: ['last_modified', 'Last-Modified'], type: :time
         attribute :metadata
         attribute :origin, aliases: ['Origin']
         # @!attribute [rw] delete_at
@@ -36,7 +36,7 @@ module Fog
 
         def initialize(new_attributes = {})
           super
-          @dirty = if last_modified then false else true end
+          @dirty = last_modified ? false : true
         end
 
         def body
@@ -119,7 +119,7 @@ module Fog
           options['Content-Encoding'] = content_encoding if content_encoding
           options.merge!(metadata_to_headers)
 
-          if not @dirty
+          if !@dirty
             data = service.post_object(directory.key, key, options)
           else
             requires :body
@@ -172,7 +172,7 @@ module Fog
         def metadata_attributes
           if last_modified
             headers = service.head_object(directory.key, key).headers
-            headers.reject! { |k, _v| !metadata_attribute?(k) }
+            headers.select! { |k, _v| metadata_attribute?(k) }
           else
             {}
           end

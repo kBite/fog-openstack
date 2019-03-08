@@ -5,8 +5,8 @@ module Fog
         class Real
           def create_recordset(zone_id, name, type, records, options = {})
             data = {
-              'name'    => name,
-              'type'    => type,
+              'name' => name,
+              'type' => type,
               'records' => records
             }
 

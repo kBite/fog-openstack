@@ -6,7 +6,7 @@ module Fog
           def create_user(name, password, email, tenantId = nil, enabled = true)
             data = {
               'user' => {
-                'name'     => name,
+                'name' => name,
                 'password' => password,
                 'tenantId' => tenantId,
                 'email'    => email,
@@ -28,11 +28,11 @@ module Fog
             response = Excon::Response.new
             response.status = 200
             data = {
-              'id'       => Fog::Mock.random_hex(32),
-              'name'     => name,
-              'email'    => email,
+              'id' => Fog::Mock.random_hex(32),
+              'name' => name,
+              'email' => email,
               'tenantId' => tenantId,
-              'enabled'  => enabled
+              'enabled' => enabled
             }
             self.data[:users][data['id']] = data
             response.body = { 'user' => data }

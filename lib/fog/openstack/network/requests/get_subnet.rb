@@ -18,16 +18,16 @@ module Fog
             response.status = 200
             response.body = {
               "subnet" => {
-                "id"               => "2e4ec6a4-0150-47f5-8523-e899ac03026e",
-                "name"             => "subnet_1",
-                "network_id"       => "e624a36d-762b-481f-9b50-4154ceb78bbb",
-                "cidr"             => "10.2.2.0/24",
-                "ip_version"       => 4,
-                "gateway_ip"       => "10.2.2.1",
+                "id" => "2e4ec6a4-0150-47f5-8523-e899ac03026e",
+                "name" => "subnet_1",
+                "network_id" => "e624a36d-762b-481f-9b50-4154ceb78bbb",
+                "cidr" => "10.2.2.0/24",
+                "ip_version" => 4,
+                "gateway_ip" => "10.2.2.1",
                 "allocation_pools" => [
                   {
                     "start" => "10.2.2.2",
-                    "end"   => "10.2.2.254"
+                    "end" => "10.2.2.254"
                   }
                 ],
                 "dns_nameservers"  => [],

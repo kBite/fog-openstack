@@ -14,7 +14,7 @@ module Fog
             personality.each do |file|
               body['rebuild']['personality'] << {
                 'contents' => Base64.encode64(file['contents']),
-                'path'     => file['path']
+                'path' => file['path']
               }
             end
           end

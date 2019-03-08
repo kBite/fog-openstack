@@ -1,6 +1,6 @@
 module Fog
   module OpenStack
-    class  ContainerInfra
+    class ContainerInfra
       class Real
         def delete_cluster(uuid_or_name)
           request(

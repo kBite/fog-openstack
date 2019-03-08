@@ -14,49 +14,49 @@ describe "OpenStack authentication" do
       "access" => {
         "token" => {
           "expires" => @expires.iso8601,
-          "id"      => @token,
-          "tenant"  => {
-            "enabled"     => true,
+          "id" => @token,
+          "tenant" => {
+            "enabled" => true,
             "description" => nil,
-            "name"        => "admin",
-            "id"          => @tenant_token
+            "name" => "admin",
+            "id" => @tenant_token
           }
         },
         "serviceCatalog" => [
           {
             "endpoints" => [
               {
-                "adminURL"    => "http://example:8774/v2/#{@tenant_token}",
-                "region"      => "RegionOne",
+                "adminURL" => "http://example:8774/v2/#{@tenant_token}",
+                "region" => "RegionOne",
                 "internalURL" => "http://example:8774/v2/#{@tenant_token}",
-                "id"          => Fog::Mock.random_numbers(8).to_s,
-                "publicURL"   => "http://example:8774/v2/#{@tenant_token}"
+                "id" => Fog::Mock.random_numbers(8).to_s,
+                "publicURL" => "http://example:8774/v2/#{@tenant_token}"
               }
             ],
             "endpoints_links" => [],
-            "type"            => "compute",
-            "name"            => "nova"
+            "type" => "compute",
+            "name" => "nova"
           },
           {
-            "endpoints"       => [
+            "endpoints" => [
               {
-                "adminURL"    => "http://example:9292",
-                "region"      => "RegionOne",
+                "adminURL" => "http://example:9292",
+                "region" => "RegionOne",
                 "internalURL" => "http://example:9292",
-                "id"          => Fog::Mock.random_numbers(8).to_s,
-                "publicURL"   => "http://example:9292"
+                "id" => Fog::Mock.random_numbers(8).to_s,
+                "publicURL" => "http://example:9292"
               }
             ],
             "endpoints_links" => [],
-            "type"            => "image",
-            "name"            => "glance"
+            "type" => "image",
+            "name" => "glance"
           }
         ],
         "user" => {
-          "username"    => "admin",
+          "username" => "admin",
           "roles_links" => [],
-          "id"          => Fog::Mock.random_numbers(8).to_s,
-          "roles"       => [
+          "id" => Fog::Mock.random_numbers(8).to_s,
+          "roles" => [
             { "name" => "admin" },
             { "name" => "KeystoneAdmin" },
             { "name" => "KeystoneServiceAdmin" }
@@ -65,7 +65,7 @@ describe "OpenStack authentication" do
         },
         "metadata" => {
           "is_admin" => 0,
-          "roles"    => [
+          "roles" => [
             Fog::Mock.random_numbers(8).to_s,
             Fog::Mock.random_numbers(8).to_s,
             Fog::Mock.random_numbers(8).to_s
@@ -166,16 +166,16 @@ describe "OpenStack authentication" do
       {
         "endpoints" => [
           {
-            "adminURL"    => "http://example2:8774/v2/#{@tenant_token}",
-            "region"      => "RegionOne",
+            "adminURL" => "http://example2:8774/v2/#{@tenant_token}",
+            "region" => "RegionOne",
             "internalURL" => "http://example2:8774/v2/#{@tenant_token}",
-            "id"          => Fog::Mock.random_numbers(8).to_s,
-            "publicURL"   => "http://example2:8774/v2/#{@tenant_token}"
+            "id" => Fog::Mock.random_numbers(8).to_s,
+            "publicURL" => "http://example2:8774/v2/#{@tenant_token}"
           }
         ],
         "endpoints_links" => [],
-        "type"            => "compute",
-        "name"            => "nova2"
+        "type" => "compute",
+        "name" => "nova2"
       }
 
     Excon.stub(

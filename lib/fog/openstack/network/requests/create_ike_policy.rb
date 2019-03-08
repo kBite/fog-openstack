@@ -30,16 +30,16 @@ module Fog
           response = Excon::Response.new
           response.status = 201
           data = {
-            'id'                      => Fog::Mock.random_numbers(6).to_s,
-            'name'                    => options[:name],
-            'description'             => options[:description],
-            'tenant_id'               => options[:tenant_id],
-            'auth_algorithm'          => options[:auth_algorithm],
-            'encryption_algorithm'    => options[:encryption_algorithm],
-            'pfs'                     => options[:pfs],
+            'id' => Fog::Mock.random_numbers(6).to_s,
+            'name' => options[:name],
+            'description' => options[:description],
+            'tenant_id' => options[:tenant_id],
+            'auth_algorithm' => options[:auth_algorithm],
+            'encryption_algorithm' => options[:encryption_algorithm],
+            'pfs' => options[:pfs],
             'phase1_negotiation_mode' => options[:phase1_negotiation_mode],
-            'lifetime'                => options[:lifetime],
-            'ike_version'             => options[:ike_version]
+            'lifetime' => options[:lifetime],
+            'ike_version' => options[:ike_version]
           }
 
           self.data[:ike_policies][data['id']] = data

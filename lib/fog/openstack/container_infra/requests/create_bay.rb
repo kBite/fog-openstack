@@ -1,6 +1,6 @@
 module Fog
   module OpenStack
-    class  ContainerInfra
+    class ContainerInfra
       class Real
         def create_bay(params)
           request(

@@ -17,7 +17,7 @@ module Fog
             data = if id.nil?
                      service.create_volume(name, description, size, attributes)
                    else
-                     service.update_volume(id, attributes.select { |key| %i(name description metadata).include?(key) })
+                     service.update_volume(id, attributes.select { |key| [:name, :description, :metadata].include?(key) })
                    end
             merge_attributes(data.body['volume'])
             true

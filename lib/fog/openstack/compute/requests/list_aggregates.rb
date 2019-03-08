@@ -18,10 +18,10 @@ module Fog
           response.status = 200
           response.body = { 'aggregates' => [{
             "availability_zone" => "nova",
-            "created_at"        => "2012-11-16T06:22:23.032493",
-            "deleted"           => false,
-            "deleted_at"        => nil,
-            "metadata"          => {
+            "created_at" => "2012-11-16T06:22:23.032493",
+            "deleted" => false,
+            "deleted_at" => nil,
+            "metadata" => {
               "availability_zone" => "nova"
             },
             "id"                => 1,

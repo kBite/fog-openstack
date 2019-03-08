@@ -16,9 +16,9 @@ module Fog
           response = Excon::Response.new
           response.status = data[:server_groups].delete(group_id) ? 204 : 404
           response.headers = {
-            "Content-Type"   => "text/html; charset=UTF-8",
+            "Content-Type" => "text/html; charset=UTF-8",
             "Content-Length" => "0",
-            "Date"           => Date.new
+            "Date" => Date.new
           }
           response
         end

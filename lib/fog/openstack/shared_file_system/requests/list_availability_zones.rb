@@ -2,7 +2,7 @@ module Fog
   module OpenStack
     class SharedFileSystem
       class Real
-        def list_availability_zones()
+        def list_availability_zones
           request(
             expects: 200,
             method: 'GET',
@@ -12,7 +12,7 @@ module Fog
       end
 
       class Mock
-        def list_availability_zones()
+        def list_availability_zones
           response = Excon::Response.new
           response.status = 200
           response.body = { 'availability_zones' => data[:availability_zones] }

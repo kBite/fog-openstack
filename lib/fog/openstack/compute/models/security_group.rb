@@ -12,7 +12,7 @@ module Fog
         attribute :tenant_id
 
         def security_group_rules
-          Fog::OpenStack::Compute::SecurityGroupRules.new(:service => service).load(attributes[:security_group_rules])
+          Fog::OpenStack::Compute::SecurityGroupRules.new(service: service).load(attributes[:security_group_rules])
         end
 
         def rules

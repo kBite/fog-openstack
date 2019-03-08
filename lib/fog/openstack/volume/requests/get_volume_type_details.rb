@@ -17,8 +17,8 @@ module Fog
           response.status = 200
           response.body = {
             "volume_type" => {
-              "id"          => "1",
-              "name"        => "type 1",
+              "id" => "1",
+              "name" => "type 1",
               "extra_specs" => {
                 "volume_backend_name" => "type 1 backend name"
               }

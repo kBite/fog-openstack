@@ -4,7 +4,7 @@ module Fog
       class V2
         class Real
           def get_quota(project_id = nil)
-            headers, _options = Fog::OpenStack::DNS::V2.setup_headers(:all_projects => !project_id.nil?)
+            headers, _options = Fog::OpenStack::DNS::V2.setup_headers(all_projects: !project_id.nil?)
 
             request(
               expects: 200,

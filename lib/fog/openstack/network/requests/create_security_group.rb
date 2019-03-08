@@ -76,10 +76,10 @@ module Fog
                 "id"                => Fog::UUID.uuid,
                 "security_group_id" => sec_group_id }
             ],
-            "id"                   => sec_group_id,
-            "tenant_id"            => tenant_id,
-            "name"                 => options[:name] || "",
-            "description"          => options[:description] || ""
+            "id" => sec_group_id,
+            "tenant_id" => tenant_id,
+            "name" => options[:name] || "",
+            "description" => options[:description] || ""
           }
 
           self.data[:security_groups][data["id"]] = data

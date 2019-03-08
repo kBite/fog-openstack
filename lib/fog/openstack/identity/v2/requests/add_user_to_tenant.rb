@@ -23,7 +23,7 @@ module Fog
             response.status = 200
             response.body = {
               'role' => {
-                'id'   => role['id'],
+                'id' => role['id'],
                 'name' => role['name']
               }
             }

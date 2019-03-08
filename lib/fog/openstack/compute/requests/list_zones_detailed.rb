@@ -34,13 +34,13 @@ module Fog
                         "updated_at" => "2015-07-22T07:40:04.000000"
                       },
                       "nova-consoleauth" => {
-                        "available"  => true,
-                        "active"     => true,
+                        "available" => true,
+                        "active" => true,
                         "updated_at" => "2015-07-22T07:40:09.000000"
                       }
                     }
                   },
-                  "zoneName"  => "internal"
+                  "zoneName" => "internal"
                 },
                 {
                   "zoneState" => {
@@ -49,8 +49,8 @@ module Fog
                   "hosts" => {
                     "instack.localdomain" => {
                       "nova-compute" => {
-                        "available"  => true,
-                        "active"     => true,
+                        "available" => true,
+                        "active" => true,
                         "updated_at" => "2015-07-22T07:40:04.000000"
                       }
                     }

@@ -4,7 +4,6 @@ require 'uri'
 module Fog
   module OpenStack
     class KeyManager
-
       class Secret < Fog::OpenStack::Model
         identity :secret_ref
 
@@ -30,8 +29,8 @@ module Fog
         attribute :metadata
 
         def uuid
-          URI(self.secret_ref).path.split('/').last
-        rescue
+          URI(secret_ref).path.split('/').last
+        rescue StandardError
           nil
         end
 

@@ -6,7 +6,7 @@ module Fog
           data = {
             'volumeAttachment' => {
               'volumeId' => volume_id.to_s,
-              'device'   => device
+              'device' => device
             }
           }
           request(
@@ -23,10 +23,10 @@ module Fog
           response = Excon::Response.new
           response.status = 200
           data = {
-            'id'       => volume_id,
+            'id' => volume_id,
             'volumeId' => volume_id,
             'serverId' => server_id,
-            'device'   => device
+            'device' => device
           }
           self.data[:volumes][volume_id]['attachments'] << data
           self.data[:volumes][volume_id]['status'] = 'in-use'

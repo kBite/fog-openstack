@@ -1,8 +1,8 @@
 module Fog
   module OpenStack
-    class  ContainerInfra < Fog::Service
-      SUPPORTED_VERSIONS = /v1/
-      SUPPORTED_MICROVERSION = '1.3'
+    class ContainerInfra < Fog::Service
+      SUPPORTED_VERSIONS = /v1/.freeze
+      SUPPORTED_MICROVERSION = '1.3'.freeze
 
       requires :openstack_auth_url
       recognizes :openstack_auth_token, :openstack_management_url,
@@ -94,11 +94,11 @@ module Fog
           unless @data[:users].find { |u| u['name'] == options[:openstack_username] }
             id = Fog::Mock.random_numbers(6).to_s
             @data[:users][id] = {
-              'id'       => id,
-              'name'     => options[:openstack_username],
-              'email'    => "#{options[:openstack_username]}@mock.com",
+              'id' => id,
+              'name' => options[:openstack_username],
+              'email' => "#{options[:openstack_username]}@mock.com",
               'tenantId' => Fog::Mock.random_numbers(6).to_s,
-              'enabled'  => true
+              'enabled' => true
             }
           end
         end

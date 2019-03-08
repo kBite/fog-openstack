@@ -24,9 +24,9 @@ module Fog
           response.status = 200
           response.body = {
             "service" => {
-              "host"            => "host1",
-              "binary"          => "nova-compute",
-              "status"          => "disabled",
+              "host" => "host1",
+              "binary" => "nova-compute",
+              "status" => "disabled",
               "disabled_reason" => "test2"
             }
           }

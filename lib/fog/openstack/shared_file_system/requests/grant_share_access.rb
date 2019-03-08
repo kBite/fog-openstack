@@ -5,8 +5,8 @@ module Fog
         def grant_share_access(share_id, access_to = '0.0.0.0/0', access_type = 'ip', access_level = 'rw')
           action = {
             "#{action_prefix}allow_access" => {
-              'access_to'    => access_to,
-              'access_type'  => access_type,
+              'access_to' => access_to,
+              'access_type' => access_type,
               'access_level' => access_level
             }
           }

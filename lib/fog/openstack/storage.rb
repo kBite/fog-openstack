@@ -1,5 +1,3 @@
-
-
 module Fog
   module OpenStack
     class Storage < Fog::Service
@@ -77,7 +75,7 @@ module Fog
           @openstack_management_url = options[:openstack_management_url] || 'http://example:8774/v2/AUTH_1234'
 
           @openstack_management_uri = URI.parse(@openstack_management_url)
-          @path   = @openstack_management_uri.path
+          @path = @openstack_management_uri.path
           @path.sub!(%r{/$}, '')
         end
 

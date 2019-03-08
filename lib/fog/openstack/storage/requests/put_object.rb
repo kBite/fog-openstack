@@ -26,11 +26,11 @@ module Fog
           end
 
           params.merge!(
-            :expects    => [201, 202],
-            :idempotent => !params[:request_block],
-            :headers    => headers,
-            :method     => 'PUT',
-            :path       => "#{Fog::OpenStack.escape(container)}/#{Fog::OpenStack.escape(object)}"
+            expects: [201, 202],
+            idempotent: !params[:request_block],
+            headers: headers,
+            method: 'PUT',
+            path: "#{Fog::OpenStack.escape(container)}/#{Fog::OpenStack.escape(object)}"
           )
 
           request(params)
@@ -46,6 +46,7 @@ module Fog
             Kernel.loop do
               chunk = yield
               break if chunk.empty?
+
               dgst.update chunk
             end
           elsif data.kind_of?(String)

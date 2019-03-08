@@ -1,14 +1,13 @@
 module Fog
   module OpenStack
     class Compute
-      #
       class Real
         def create_volume(name, description, size, options = {})
           data = {
             'volume' => {
-              'display_name'        => name,
+              'display_name' => name,
               'display_description' => description,
-              'size'                => size
+              'size' => size
             }
           }
 

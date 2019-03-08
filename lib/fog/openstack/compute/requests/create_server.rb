@@ -6,7 +6,7 @@ module Fog
           data = {
             'server' => {
               'flavorRef' => flavor_ref,
-              'name'      => name
+              'name' => name
             }
           }
           data['server']['imageRef'] = image_ref if image_ref
@@ -37,7 +37,7 @@ module Fog
             options['personality'].each do |file|
               data['server']['personality'] << {
                 'contents' => Base64.encode64(file['contents'] || file[:contents]),
-                'path'     => file['path'] || file[:path]
+                'path' => file['path'] || file[:path]
               }
             end
           end
@@ -94,7 +94,7 @@ module Fog
           response.status = 202
 
           server_id = Fog::Mock.random_numbers(6).to_s
-          identity = Fog::OpenStack::Identity.new(:openstack_auth_url => credentials[:openstack_auth_url], :openstack_identity_api_version => 'v2.0')
+          identity = Fog::OpenStack::Identity.new(openstack_auth_url: credentials[:openstack_auth_url], openstack_identity_api_version: 'v2.0')
           user = identity.users.find do |u|
             u.name == @openstack_username
           end

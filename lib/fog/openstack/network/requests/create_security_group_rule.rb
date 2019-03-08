@@ -57,15 +57,15 @@ module Fog
         def create_security_group_rule(security_group_id, direction, options = {})
           response = Excon::Response.new
           data = {
-            "id"                => Fog::UUID.uuid,
-            "remote_group_id"   => options[:remote_group_id],
-            "direction"         => direction,
-            "remote_ip_prefix"  => options[:remote_ip_prefix],
-            "protocol"          => options[:protocol],
-            "ethertype"         => options[:ethertype] || "IPv4",
-            "tenant_id"         => options[:tenant_id] || Fog::Mock.random_numbers(14).to_s,
-            "port_range_max"    => options[:port_range_max],
-            "port_range_min"    => options[:port_range_min],
+            "id" => Fog::UUID.uuid,
+            "remote_group_id" => options[:remote_group_id],
+            "direction" => direction,
+            "remote_ip_prefix" => options[:remote_ip_prefix],
+            "protocol" => options[:protocol],
+            "ethertype" => options[:ethertype] || "IPv4",
+            "tenant_id" => options[:tenant_id] || Fog::Mock.random_numbers(14).to_s,
+            "port_range_max" => options[:port_range_max],
+            "port_range_min" => options[:port_range_min],
             "security_group_id" => security_group_id
           }
           self.data[:security_group_rules][data["id"]] = data

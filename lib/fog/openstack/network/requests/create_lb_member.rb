@@ -5,10 +5,10 @@ module Fog
         def create_lb_member(pool_id, address, protocol_port, weight, options = {})
           data = {
             'member' => {
-              'pool_id'       => pool_id,
-              'address'       => address,
+              'pool_id' => pool_id,
+              'address' => address,
               'protocol_port' => protocol_port,
-              'weight'        => weight
+              'weight' => weight
             }
           }
 
@@ -31,12 +31,12 @@ module Fog
           response = Excon::Response.new
           response.status = 201
           data = {
-            'id'             => Fog::Mock.random_numbers(6).to_s,
-            'pool_id'        => pool_id,
-            'address'        => address,
-            'protocol_port'  => protocol_port,
-            'weight'         => weight,
-            'status'         => 'ACTIVE',
+            'id' => Fog::Mock.random_numbers(6).to_s,
+            'pool_id' => pool_id,
+            'address' => address,
+            'protocol_port' => protocol_port,
+            'weight' => weight,
+            'status' => 'ACTIVE',
             'admin_state_up' => options[:admin_state_up],
             'tenant_id'      => options[:tenant_id]
           }

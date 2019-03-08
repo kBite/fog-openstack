@@ -15,7 +15,7 @@ module Fog
         def save(options = {})
           if persisted?
             stack_default_options = default_options
-            if (options.key?(:template_url))
+            if options.key?(:template_url)
               stack_default_options.delete(:template)
             end
             service.update_stack(self, stack_default_options.merge(options)).body['stack']

@@ -29,9 +29,9 @@ module Fog
           response = Excon::Response.new
           response.status = 200
           response.headers = {
-            "Content-Type"   => "text/html; charset=UTF-8",
+            "Content-Type" => "text/html; charset=UTF-8",
             "Content-Length" => "0",
-            "Date"           => Date.new
+            "Date" => Date.new
           }
           response.body = { 'aggregate' => data[:aggregates].first }
           response

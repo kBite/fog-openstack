@@ -4,7 +4,7 @@ module Fog
   module OpenStack
     class Workflow
       class V2 < Fog::Service
-        SUPPORTED_VERSIONS = /v2/
+        SUPPORTED_VERSIONS = /v2/.freeze
 
         requires :openstack_auth_url
         recognizes :openstack_username, :openstack_api_key,
@@ -80,7 +80,7 @@ module Fog
 
           include Fog::OpenStack::Core
 
-          def initialize(options = {})
+          def initialize(_options = {})
             @auth_token = Fog::Mock.random_base64(64)
             @auth_token_expiration = (Time.now.utc + 86_400).iso8601
           end

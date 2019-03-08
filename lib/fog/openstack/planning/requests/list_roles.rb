@@ -19,9 +19,9 @@ module Fog
           response.body = [
             {
               "description" => "OpenStack hypervisor node. Can be wrapped in a ResourceGroup for scaling.\n",
-              "name"        => "compute",
-              "uuid"        => "f72c0656-5696-4c66-81a5-d6d88a48e385",
-              "version"     => 1
+              "name" => "compute",
+              "uuid" => "f72c0656-5696-4c66-81a5-d6d88a48e385",
+              "version" => 1
             }
           ]
           response

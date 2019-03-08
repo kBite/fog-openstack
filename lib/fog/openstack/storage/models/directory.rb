@@ -23,8 +23,8 @@ module Fog
         def files
           @files ||= begin
             Fog::OpenStack::Storage::Files.new(
-              :directory => self,
-              :service   => service
+              directory: self,
+              service: service
             )
           end
         end
@@ -34,8 +34,8 @@ module Fog
 
           @public_url ||= begin
             service.public_url(key)
-          rescue Fog::OpenStack::Storage::NotFound => err
-            nil
+                          rescue Fog::OpenStack::Storage::NotFound => err
+                            nil
           end
         end
 

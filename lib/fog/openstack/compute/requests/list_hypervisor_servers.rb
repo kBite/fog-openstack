@@ -19,10 +19,10 @@ module Fog
           response.body = { 'hypervisors' => [
             {
               "hypervisor_hostname" => "fake-mini",
-              "id"                  => hypervisor_id,
-              "state"               => "up",
-              "status"              => "enabled",
-              "servers"             => [
+              "id" => hypervisor_id,
+              "state" => "up",
+              "status" => "enabled",
+              "servers" => [
                 {
                   "name" => "test_server1",
                   "uuid" => "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"

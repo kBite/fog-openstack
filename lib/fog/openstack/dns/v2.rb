@@ -4,7 +4,7 @@ module Fog
   module OpenStack
     class DNS
       class V2 < Fog::Service
-        SUPPORTED_VERSIONS = /v2/
+        SUPPORTED_VERSIONS = /v2/.freeze
 
         requires   :openstack_auth_url
         recognizes :openstack_auth_token, :openstack_management_url,
@@ -92,10 +92,10 @@ module Fog
                   "masters"        => [],
                   "type"           => "PRIMARY",
                   "transferred_at" => '',
-                  "version"        => 1,
-                  "created_at"     => "2014-07-07T18:25:31.275934",
-                  "updated_at"     => '',
-                  "links"          => {
+                  "version" => 1,
+                  "created_at" => "2014-07-07T18:25:31.275934",
+                  "updated_at" => '',
+                  "links" => {
                     "self" => "https://127.0.0.1:9001/v2/zones/a86dba58-0043-4cc6-a1bb-69d5e86f3ca3"
                   }
                 }],
@@ -109,11 +109,11 @@ module Fog
                   "pools" => [
                     {
                       "description" => '',
-                      "id"          => "794ccc2c-d751-44fe-b57f-8894c9f5c842",
-                      "project_id"  => '',
-                      "created_at"  => "2015-02-18T22:18:58.000000",
-                      "attributes"  => '',
-                      "ns_records"  => [
+                      "id" => "794ccc2c-d751-44fe-b57f-8894c9f5c842",
+                      "project_id" => '',
+                      "created_at" => "2015-02-18T22:18:58.000000",
+                      "attributes" => '',
+                      "ns_records" => [
                         {
                           "hostname" => "ns1.example.org.",
                           "priority" => 1
@@ -122,16 +122,16 @@ module Fog
                       "links" => {
                         "self" => "http://127.0.0.1:9001/v2/pools/794ccc2c-d751-44fe-b57f-8894c9f5c842"
                       },
-                      "name"        => "default",
-                      "updated_at"  => "2015-02-19T15:59:44.000000"
+                      "name" => "default",
+                      "updated_at" => "2015-02-19T15:59:44.000000"
                     },
                     {
                       "description" => '',
-                      "id"          => "d1716333-8c16-490f-85ee-29af36907605",
-                      "project_id"  => "noauth-project",
-                      "created_at"  => "2015-02-23T21:56:33.000000",
-                      "attributes"  => '',
-                      "ns_records"  => [
+                      "id" => "d1716333-8c16-490f-85ee-29af36907605",
+                      "project_id" => "noauth-project",
+                      "created_at" => "2015-02-23T21:56:33.000000",
+                      "attributes" => '',
+                      "ns_records" => [
                         {
                           "hostname" => "ns2.example.org.",
                           "priority" => 1
@@ -140,39 +140,39 @@ module Fog
                       "links" => {
                         "self" => "http://127.0.0.1:9001/v2/pools/d1716333-8c16-490f-85ee-29af36907605"
                       },
-                      "name"        => "example_pool",
-                      "updated_at"  => ''
+                      "name" => "example_pool",
+                      "updated_at" => ''
                     }
                   ]
                 },
                 quota: {
                   "api_export_size"   => 1000,
                   "recordset_records" => 20,
-                  "zone_records"      => 500,
-                  "zone_recordsets"   => 500,
-                  "zones"             => 100
+                  "zone_records" => 500,
+                  "zone_recordsets" => 500,
+                  "zones" => 100
                 },
                 recordsets: {
                   "recordsets" => [{
                     "description" => "This is an example record set.",
-                    "links"       => {
+                    "links" => {
                       "self" => "https://127.0.0.1:9001/v2/zones/2150b1bf-dee2-4221-9d85-11f7886fb15f/recordsets/f7b10e9b-0cae-4a91-b162-562bc6096648"
                     },
-                    "updated_at"  => '',
-                    "records"     => [
+                    "updated_at" => '',
+                    "records" => [
                       "10.1.0.2"
                     ],
-                    "ttl"         => 3600,
-                    "id"          => "f7b10e9b-0cae-4a91-b162-562bc6096648",
-                    "name"        => "example.org.",
-                    "project_id"  => "4335d1f0-f793-11e2-b778-0800200c9a66",
-                    "zone_id"     => "2150b1bf-dee2-4221-9d85-11f7886fb15f",
-                    "zone_name"   => "example.com.",
-                    "created_at"  => "2014-10-24T19:59:44.000000",
-                    "version"     => 1,
-                    "type"        => "A",
-                    "status"      => "ACTIVE",
-                    "action"      => "NONE"
+                    "ttl" => 3600,
+                    "id" => "f7b10e9b-0cae-4a91-b162-562bc6096648",
+                    "name" => "example.org.",
+                    "project_id" => "4335d1f0-f793-11e2-b778-0800200c9a66",
+                    "zone_id" => "2150b1bf-dee2-4221-9d85-11f7886fb15f",
+                    "zone_name" => "example.com.",
+                    "created_at" => "2014-10-24T19:59:44.000000",
+                    "version" => 1,
+                    "type" => "A",
+                    "status" => "ACTIVE",
+                    "action" => "NONE"
                   }],
                   "links" => {
                     "self" => "http://127.0.0.1:9001/v2/recordsets?limit=1",
@@ -277,11 +277,11 @@ module Fog
             unless @data[:users].detect { |u| u['name'] == options[:openstack_username] }
               id = Fog::Mock.random_numbers(6).to_s
               @data[:users][id] = {
-                'id'       => id,
-                'name'     => options[:openstack_username],
-                'email'    => "#{options[:openstack_username]}@mock.com",
+                'id' => id,
+                'name' => options[:openstack_username],
+                'email' => "#{options[:openstack_username]}@mock.com",
                 'tenantId' => Fog::Mock.random_numbers(6).to_s,
-                'enabled'  => true
+                'enabled' => true
               }
             end
           end

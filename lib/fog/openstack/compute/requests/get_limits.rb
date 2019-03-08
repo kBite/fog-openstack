@@ -58,31 +58,31 @@ module Fog
 
           absolute_limits = {
             # Max
-            'maxServerMeta'           => 128,
-            'maxTotalInstances'       => 10,
-            'maxPersonality'          => 5,
-            'maxImageMeta'            => 128,
-            'maxPersonalitySize'      => 10240,
-            'maxSecurityGroupRules'   => 20,
-            'maxTotalKeypairs'        => 100,
-            'maxSecurityGroups'       => 10,
-            'maxTotalCores'           => 20,
-            'maxTotalFloatingIps'     => 10,
-            'maxTotalRAMSize'         => 51200,
+            'maxServerMeta' => 128,
+            'maxTotalInstances' => 10,
+            'maxPersonality' => 5,
+            'maxImageMeta' => 128,
+            'maxPersonalitySize' => 10240,
+            'maxSecurityGroupRules' => 20,
+            'maxTotalKeypairs' => 100,
+            'maxSecurityGroups' => 10,
+            'maxTotalCores' => 20,
+            'maxTotalFloatingIps' => 10,
+            'maxTotalRAMSize' => 51200,
 
             # Used
-            'totalCoresUsed'          => -1,
-            'totalRAMUsed'            => -2048,
-            'totalInstancesUsed'      => -1,
+            'totalCoresUsed' => -1,
+            'totalRAMUsed' => -2048,
+            'totalInstancesUsed' => -1,
             'totalSecurityGroupsUsed' => 0,
-            'totalFloatingIpsUsed'    => 0
+            'totalFloatingIpsUsed' => 0
           }
 
           Excon::Response.new(
             status: 200,
             body: {
               'limits' => {
-                'rate'     => rate_limits,
+                'rate' => rate_limits,
                 'absolute' => absolute_limits
               }
             }

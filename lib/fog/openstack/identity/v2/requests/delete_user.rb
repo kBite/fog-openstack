@@ -21,7 +21,7 @@ module Fog
             response = Excon::Response.new
             response.status = 204
             response
-          rescue
+          rescue StandardError
             raise Fog::OpenStack::Identity::NotFound
           end
         end

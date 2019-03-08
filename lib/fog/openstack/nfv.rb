@@ -3,7 +3,7 @@ require 'yaml'
 module Fog
   module OpenStack
     class NFV < Fog::Service
-      SUPPORTED_VERSIONS = /v1.0/
+      SUPPORTED_VERSIONS = /v1.0/.freeze
 
       requires :openstack_auth_url
       recognizes :openstack_auth_token, :openstack_management_url,
@@ -48,9 +48,9 @@ module Fog
             hash[key] = {
               vnfs: [
                 {
-                  "status"      => "ACTIVE",
+                  "status" => "ACTIVE",
                   "description" => "demo-example",
-                  "tenant_id"   => "943b6ff8229a4ec2bed0a306f869a0ea",
+                  "tenant_id" => "943b6ff8229a4ec2bed0a306f869a0ea",
                   "instance_id" => "5a9a7d3b-24f5-4226-8d43-262972a1776e",
                   "mgmt_url"    => "{\"vdu1\": \"192.168.0.8\"}",
                   "attributes"  => { "monitoring_policy" => "{\"vdus\": {}}" },
@@ -80,7 +80,7 @@ module Fog
 
         include Fog::OpenStack::Core
 
-        def initialize(options = {})
+        def initialize(_options = {})
           @auth_token = Fog::Mock.random_base64(64)
           @auth_token_expiration = (Time.now.utc + 86_400).iso8601
         end

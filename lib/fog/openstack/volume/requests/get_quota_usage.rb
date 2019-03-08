@@ -19,18 +19,18 @@ module Fog
             'quota_set' => {
               'gigabytes' => {
                 'reserved' => 0,
-                'limit'    => -1,
-                'in_use'   => 160
+                'limit' => -1,
+                'in_use' => 160
               },
               'snapshots' => {
                 'reserved' => 0,
-                'limit'    => 50,
-                'in_use'   => 3
+                'limit' => 50,
+                'in_use' => 3
               },
               'volumes' => {
                 'reserved' => 0,
-                'limit'    => 50,
-                'in_use'   => 5
+                'limit' => 50,
+                'in_use' => 5
               },
               'id' => tenant_id
             }

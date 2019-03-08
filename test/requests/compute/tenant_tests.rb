@@ -3,9 +3,9 @@ require "test_helper"
 describe "Fog::OpenStack::Compute | tenant requests" do
   before do
     @tenant_format = {
-      'id'          => String,
-      'name'        => String,
-      'enabled'     => Fog::Boolean,
+      'id' => String,
+      'name' => String,
+      'enabled' => Fog::Boolean,
       'description' => Fog::Nullable::String
     }
   end

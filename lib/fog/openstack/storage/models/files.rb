@@ -16,9 +16,9 @@ module Fog
         def all(options = {})
           requires :directory
           options = {
-            'limit'  => limit,
+            'limit' => limit,
             'marker' => marker,
-            'path'   => path,
+            'path' => path,
             'prefix' => prefix
           }.merge!(options)
           merge_attributes(options)

@@ -31,9 +31,9 @@ module Fog
           response.status = 200
           response.headers = {
             "X-Compute-Request-Id" => "req-fdc6f99e-55a2-4ab1-8904-0892753828cf",
-            "Content-Type"         => "application/json",
-            "Content-Length"       => "356",
-            "Date"                 => Date.new
+            "Content-Type" => "application/json",
+            "Content-Length" => "356",
+            "Date" => Date.new
           }
           response.body = data[:chassis_collection].first
           response

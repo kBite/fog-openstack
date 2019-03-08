@@ -155,7 +155,7 @@ module Fog
           end
 
           def version_in_path?(url)
-            true if url =~ /\/v3(\/)*.*$/
+            true if url =~ %r{/v3(/)*.*$}
           end
         end
       end

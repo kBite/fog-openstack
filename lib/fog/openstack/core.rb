@@ -127,7 +127,7 @@ module Fog
 
         {
           'Content-Type' => 'application/json',
-          'Accept'       => 'application/json',
+          'Accept' => 'application/json',
           'X-Auth-Token' => @auth_token
         }.merge!(additional_headers)
       end
@@ -192,6 +192,7 @@ module Fog
           unless missing_credentials.empty?
             raise ArgumentError, "Missing required arguments: #{missing_credentials.join(', ')}"
           end
+
           @openstack_can_reauthenticate = true
         end
 

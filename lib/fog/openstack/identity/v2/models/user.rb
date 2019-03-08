@@ -22,6 +22,7 @@ module Fog
 
           def save
             raise Fog::Errors::Error, 'Resaving an existing object may create a duplicate' if persisted?
+
             requires :name
             enabled = true if enabled.nil?
             data = service.create_user(name, password, email, tenant_id, enabled)

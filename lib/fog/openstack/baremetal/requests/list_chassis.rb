@@ -20,14 +20,14 @@ module Fog
             "chassis" => [
               {
                 "description" => "Sample chassis",
-                "links"       => [
+                "links" => [
                   {
                     "href" => "http =>//localhost:6385/v1/chassis/eaaca217-e7d8-47b4-bb41-3f99f20eed89",
-                    "rel"  => "self"
+                    "rel" => "self"
                   },
                   {
                     "href" => "http =>//localhost:6385/chassis/eaaca217-e7d8-47b4-bb41-3f99f20eed89",
-                    "rel"  => "bookmark"
+                    "rel" => "bookmark"
                   }
                 ],
                 "uuid" => Fog::UUID.uuid

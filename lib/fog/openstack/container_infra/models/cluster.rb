@@ -2,7 +2,7 @@ require_relative 'base'
 
 module Fog
   module OpenStack
-    class  ContainerInfra
+    class ContainerInfra
       class Cluster < Fog::OpenStack::ContainerInfra::Base
         identity :uuid
 

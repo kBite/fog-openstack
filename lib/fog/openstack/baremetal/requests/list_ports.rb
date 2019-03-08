@@ -20,14 +20,14 @@ module Fog
             "ports" => [
               {
                 "address" => "fe:54:00:77:07:d9",
-                "links"   => [
+                "links" => [
                   {
                     "href" => "http://localhost:6385/v1/ports/27e3153e-d5bf-4b7e-b517-fb518e17f34c",
-                    "rel"  => "self"
+                    "rel" => "self"
                   },
                   {
                     "href" => "http://localhost:6385/ports/27e3153e-d5bf-4b7e-b517-fb518e17f34c",
-                    "rel"  => "bookmark"
+                    "rel" => "bookmark"
                   }
                 ],
                 "uuid" => Fog::UUID.uuid

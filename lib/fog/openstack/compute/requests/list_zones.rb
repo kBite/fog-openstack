@@ -20,8 +20,8 @@ module Fog
                 "zoneState" => {
                   "available" => true
                 },
-                "hosts"     => nil,
-                "zoneName"  => "nova"
+                "hosts" => nil,
+                "zoneName" => "nova"
               }
             ] },
             status: 200

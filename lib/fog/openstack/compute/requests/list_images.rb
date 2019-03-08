@@ -17,7 +17,7 @@ module Fog
           data = list_images_detail.body['images']
           images = []
           data.each do |image|
-            images << image.reject { |key, _value| !['id', 'name', 'links'].include?(key) }
+            images << image.select { |key, _value| ['id', 'name', 'links'].include?(key) }
           end
           response.status = [200, 203][rand(2)]
           response.body = { 'images' => images }

@@ -40,8 +40,8 @@ module Fog
             response.status = 200
 
             data = {
-              'access'    => Fog::Mock.random_hex(32),
-              'secret'    => Fog::Mock.random_hex(32),
+              'access' => Fog::Mock.random_hex(32),
+              'secret' => Fog::Mock.random_hex(32),
               'tenant_id' => tenant_id,
               'user_id'   => user_id
             }

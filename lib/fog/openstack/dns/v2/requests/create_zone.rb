@@ -5,7 +5,7 @@ module Fog
         class Real
           def create_zone(name, email, options = {})
             data = {
-              'name'  => name,
+              'name' => name,
               'email' => email
             }
 

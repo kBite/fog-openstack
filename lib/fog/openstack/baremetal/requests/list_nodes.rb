@@ -18,12 +18,12 @@ module Fog
           response.status = [200, 204][rand(2)]
           response.body = {
             "nodes" => [{
-              "instance_uuid"   => Fog::UUID.uuid,
-              "maintenance"     => false,
-              "power_state"     => "power on",
+              "instance_uuid" => Fog::UUID.uuid,
+              "maintenance" => false,
+              "power_state" => "power on",
               "provision_state" => "active",
-              "uuid"            => Fog::UUID.uuid,
-              "links"           => []
+              "uuid" => Fog::UUID.uuid,
+              "links" => []
             }]
           }
           response

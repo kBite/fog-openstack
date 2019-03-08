@@ -122,7 +122,7 @@ module Fog
               else
                 @current_tenant_id = Fog::Mock.random_hex(32)
                 @current_tenant = data[:tenants][@current_tenant_id] = {
-                  'id'   => @current_tenant_id,
+                  'id' => @current_tenant_id,
                   'name' => @openstack_tenant
                 }
               end
@@ -140,11 +140,11 @@ module Fog
             else
               @current_user_id = Fog::Mock.random_hex(32)
               @current_user = data[:users][@current_user_id] = {
-                'id'       => @current_user_id,
-                'name'     => @openstack_username,
-                'email'    => "#{@openstack_username}@mock.com",
+                'id' => @current_user_id,
+                'name' => @openstack_username,
+                'email' => "#{@openstack_username}@mock.com",
                 'tenantId' => Fog::Mock.random_numbers(6).to_s,
-                'enabled'  => true
+                'enabled' => true
               }
             end
           end
@@ -183,7 +183,7 @@ module Fog
           end
 
           def version_in_path?(url)
-            true if url =~ /\/v2(\.0)*(\/)*.*$/
+            true if url =~ %r{/v2(\.0)*(/)*.*$}
           end
         end
       end

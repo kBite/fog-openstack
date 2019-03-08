@@ -6,8 +6,8 @@ module Fog
           data = {
             'listener' => {
               'loadbalancer_id' => loadbalancer_id,
-              'protocol'        => protocol,
-              'protocol_port'   => protocol_port
+              'protocol' => protocol,
+              'protocol_port' => protocol_port
             }
           }
 
@@ -40,9 +40,9 @@ module Fog
             'default_pool_id'         => options[:default_pool_id],
             'connection_limit'        => options[:connection_limit],
             'default_tls_container_ref' => options[:default_tls_container_ref],
-            'sni_container_refs'      => options[:sni_container_refs],
-            'admin_state_up'          => options[:admin_state_up],
-            'tenant_id'               => options[:tenant_id]
+            'sni_container_refs' => options[:sni_container_refs],
+            'admin_state_up' => options[:admin_state_up],
+            'tenant_id' => options[:tenant_id]
           }
 
           self.data[:lbaas_listener][data['id']] = data

@@ -45,7 +45,7 @@ module Fog
           response = Excon::Response.new
           if network = list_networks.body['networks'].find { |_| _['id'] == network_id }
             network.merge!(Fog::OpenStack::Network::Real.update(options))
-            response.body = {'network' => network}
+            response.body = { 'network' => network }
             response.status = 200
             response
           else

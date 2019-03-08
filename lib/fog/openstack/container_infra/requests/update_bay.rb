@@ -1,6 +1,6 @@
 module Fog
   module OpenStack
-    class  ContainerInfra
+    class ContainerInfra
       class Real
         def update_bay(uuid_or_name, params)
           request(

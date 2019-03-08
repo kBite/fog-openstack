@@ -74,15 +74,16 @@ module Fog
 
         def metadata
           @metadata ||= begin
-            Fog::OpenStack::Compute::Metadata.new(:service => service,
-                                                  :parent  => self)
+            Fog::OpenStack::Compute::Metadata.new(service: service,
+                                                  parent: self)
           end
         end
 
         def metadata=(new_metadata = {})
           return unless new_metadata
+
           metas = []
-          new_metadata.each { |k, v| metas << {"key" => k, "value" => v} }
+          new_metadata.each { |k, v| metas << { "key" => k, "value" => v } }
           @metadata = metadata.load(metas)
         end
 
@@ -233,7 +234,7 @@ module Fog
             groups = service.list_security_groups(server_id: id).body['security_groups']
 
             groups.map do |group|
-              Fog::OpenStack::Compute::SecurityGroup.new group.merge(:service => service)
+              Fog::OpenStack::Compute::SecurityGroup.new group.merge(service: service)
             end
           else
             service.security_groups.all
@@ -365,6 +366,7 @@ module Fog
 
         def save
           raise Fog::Errors::Error, 'Resaving an existing object may create a duplicate' if persisted?
+
           requires :flavor_ref, :name
           requires_one :image_ref, :block_device_mapping, :block_device_mapping_v2
           options = {

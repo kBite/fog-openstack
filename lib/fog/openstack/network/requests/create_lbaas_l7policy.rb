@@ -5,8 +5,8 @@ module Fog
         def create_lbaas_l7policy(listener_id, action, options = {})
           data = {
             'l7policy' => {
-              'listener_id'  => listener_id,
-              'action'       => action
+              'listener_id' => listener_id,
+              'action' => action
             }
           }
 

@@ -7,7 +7,6 @@ module Fog
             vanilla_options = [:target_project_id]
             data = vanilla_options.inject({}) do |result, option|
               result[option] = options[option] if options[option]
-              result
             end
 
             request(

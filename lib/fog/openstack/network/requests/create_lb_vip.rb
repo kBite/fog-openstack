@@ -5,9 +5,9 @@ module Fog
         def create_lb_vip(subnet_id, pool_id, protocol, protocol_port, options = {})
           data = {
             'vip' => {
-              'subnet_id'     => subnet_id,
-              'pool_id'       => pool_id,
-              'protocol'      => protocol,
+              'subnet_id' => subnet_id,
+              'pool_id' => pool_id,
+              'protocol' => protocol,
               'protocol_port' => protocol_port
             }
           }
@@ -32,15 +32,15 @@ module Fog
           response = Excon::Response.new
           response.status = 201
           data = {
-            'id'                  => Fog::Mock.random_numbers(6).to_s,
-            'subnet_id'           => subnet_id,
-            'pool_id'             => pool_id,
-            'protocol'            => protocol,
-            'protocol_port'       => protocol_port,
-            'name'                => options[:name],
-            'description'         => options[:description],
-            'address'             => options[:address],
-            'port_id'             => Fog::Mock.random_numbers(6).to_s,
+            'id' => Fog::Mock.random_numbers(6).to_s,
+            'subnet_id' => subnet_id,
+            'pool_id' => pool_id,
+            'protocol' => protocol,
+            'protocol_port' => protocol_port,
+            'name' => options[:name],
+            'description' => options[:description],
+            'address' => options[:address],
+            'port_id' => Fog::Mock.random_numbers(6).to_s,
             'session_persistence' => options[:session_persistence],
             'connection_limit'    => options[:connection_limit],
             'status'              => 'ACTIVE',

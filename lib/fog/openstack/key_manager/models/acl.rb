@@ -1,10 +1,8 @@
-
 require 'fog/openstack/models/model'
 
 module Fog
   module OpenStack
     class KeyManager
-
       class ACL < Fog::OpenStack::Model
         identity :acl_ref
 

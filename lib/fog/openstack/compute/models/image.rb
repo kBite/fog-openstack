@@ -21,14 +21,14 @@ module Fog
 
         def metadata
           @metadata ||= begin
-            Fog::OpenStack::Compute::Metadata.new(:service => service,
-                                                  :parent  => self)
+            Fog::OpenStack::Compute::Metadata.new(service: service,
+                                                  parent: self)
           end
         end
 
         def metadata=(new_metadata = {})
           metas = []
-          new_metadata.to_hash.each_pair { |k, v| metas << {"key" => k, "value" => v} }
+          new_metadata.to_hash.each_pair { |k, v| metas << { "key" => k, "value" => v } }
           metadata.load(metas)
         end
 

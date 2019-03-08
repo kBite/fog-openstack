@@ -18,10 +18,10 @@ module Fog
             response.status = [200, 204][rand(2)]
             response.body = {
               'tenant' => {
-                'id'          => '1',
+                'id' => '1',
                 'description' => 'Has access to everything',
-                'enabled'     => true,
-                'name'        => 'admin'
+                'enabled' => true,
+                'name' => 'admin'
               }
             }
             response

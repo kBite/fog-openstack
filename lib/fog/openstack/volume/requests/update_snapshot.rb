@@ -17,6 +17,7 @@ module Fog
           unless snapshot_id
             raise ArgumentError, 'snapshot_id is required'
           end
+
           response = Excon::Response.new
           if snapshot = data[:snapshots][snapshot_id]
             response.status                 = 200

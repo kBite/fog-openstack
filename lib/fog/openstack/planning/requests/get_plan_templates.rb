@@ -16,8 +16,8 @@ module Fog
           response = Excon::Response.new
           response.status = [200, 204][rand(2)]
           response.body = {
-            "environment.yaml"        => "... content of template file ...",
-            "plan.yaml"               => "... content of template file ...",
+            "environment.yaml" => "... content of template file ...",
+            "plan.yaml" => "... content of template file ...",
             "provider-compute-1.yaml" => "... content of template file ..."
           }
           response

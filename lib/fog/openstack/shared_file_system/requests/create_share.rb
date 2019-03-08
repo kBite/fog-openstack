@@ -5,7 +5,7 @@ module Fog
         def create_share(protocol, size, options = {})
           data = {
             'share_proto' => protocol,
-            'size'        => size
+            'size' => size
           }
 
           vanilla_options = [

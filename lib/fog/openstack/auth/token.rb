@@ -24,9 +24,10 @@ module Fog
 
         def initialize(auth, options)
           raise URLError, 'No URL provided' if auth[:openstack_auth_url].nil? || auth[:openstack_auth_url].empty?
+
           @creds = {
-            :data => build_credentials(auth),
-            :uri  => URI.parse(auth[:openstack_auth_url])
+            data: build_credentials(auth),
+            uri: URI.parse(auth[:openstack_auth_url])
           }
           response = authenticate(@creds, options)
           set(response)
@@ -61,6 +62,7 @@ module Fog
           if @expires.nil? || @expires.empty?
             raise ExpiryError, 'Missing token expiration data'
           end
+
           Time.parse(@expires) < Time.now.utc
         end
 
