@@ -30,7 +30,7 @@ module Fog
         def get(arg1, arg2 = nil)
           if arg2.nil?
             # Deprecated: get(id)
-            Fog::Logger.deprecation("#get(id) is deprecated, use #get(name, id) instead [light_black](#{caller.first})[/]")
+            Fog::Logger.deprecation("#get(id) is deprecated, use #get(name, id) instead [light_black](#{caller(1..1).first})[/]")
             return find_by_id(arg1)
           end
 
